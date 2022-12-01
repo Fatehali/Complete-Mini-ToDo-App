@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mini TODO App</title>
+    
+    <!-- Connecting Font-Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Linking my CSS file -->
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>    
+    <!-- Sweet Alert CDN -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> 
+    
+    <section class="border" id="todoVisual">
+        <div class="border barContainer">
+            <progress id="progressBar" value="0" max="0">ToDo Completion Map</progress>
+        </div>
+    </section>
+    
+    <main class="border">
+        <h1> <span class="mini">mini</span> <span class="to">To</span><span class="do">Do</span> APP </h1>
+
+        <section class="inputArea" id="inputArea">
+            <input type="text" name="ipnutBox" id="inputBox" onkeypress="enter(addEntry)" autofocus/>
+            
+            <i class="fa fa-eercast" onclick="addEntry()" title="Submit"></i>
+            <!-- <button type="button" onclick="addEntry()"></button> -->
+        </section>
+        
+        <section class="border displayArea" id="displayArea">
+            <ul id="listOfItems"></ul>
+        </section>
+    </main>
+    
+    <script>
+        const enter = (callback, opt = null) => { if (event.keyCode == 13) callback(opt); };
+    </script>
+    <script src="script.js"></script>
+
+</body>
+</html>

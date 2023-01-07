@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./images/favicon_.ico" type="image/x-icon">
     <title>mini TODO App</title>
     
     <!-- Connecting Font-Awesome -->
@@ -27,21 +28,39 @@
         <h1> <span class="mini">mini</span> <span class="to">To</span><span class="do">Do</span> APP </h1>
 
         <section class="inputArea" id="inputArea">
-            <input type="text" name="ipnutBox" id="inputBox" onkeypress="enter(addEntry)" autofocus/>
+            <input type="text" name="inputBox" id="inputBox" title="Add Todo" onkeypress="enter(addEntry)" 
+            placeholder="Read 'Harry Potter' for 20 mins..." autofocus/>
             
-            <i class="fa fa-eercast" onclick="addEntry()" title="Submit"></i>
+            <i class="fa fa-eercast" id="submitBtn" title="Submit" onclick="addEntry()"></i>
             <!-- <button type="button" onclick="addEntry()"></button> -->
         </section>
         
         <section class="border displayArea" id="displayArea">
             <ul id="listOfItems"></ul>
+            <div class="border" id="fa-spin-icon">
+                <i class="fa fa-spinner fa-spin" id="loadingIcon" aria-hidden="true"></i>
+                <span id="loadingMessage">Please wait while your ToDos are loading</span>
+            </div>
         </section>
     </main>
-    
+
+    <script type="module">
+        import { toTick, edit, remove, addEntry } from "./script.js";
+        window.toTick = toTick;
+        window.edit = edit;
+        window.remove = remove;
+        window.addEntry = addEntry;
+    </script>
     <script>
         const enter = (callback, opt = null) => { if (event.keyCode == 13) callback(opt); };
+        setTimeout(() => {
+            document.getElementById('fa-spin-icon').style.visibility = "visible";
+        }, 200);
     </script>
-    <script src="script.js"></script>
+
+    <script type="module" src="firebase.js"></script>
+
+    <script type="module" src="script.js"></script>
 
 </body>
 </html>

@@ -45,6 +45,7 @@ h1 { margin: 2.5rem; margin-top: 2.5em;}
     padding-left: 2rem;
     padding-right: 4rem;
     width: 60vw;
+    min-width: 520px;
     margin-bottom: 3rem;
     border-radius: 3.5rem;
     border: 3px solid goldenrod;
@@ -52,6 +53,7 @@ h1 { margin: 2.5rem; margin-top: 2.5em;}
 }
 #listOfItems li {
     width: 56vw;
+    min-width: 480px;
     height: 50px;
     padding: 0.6rem;
     margin-bottom: 0.75rem;
@@ -145,6 +147,7 @@ label {
     background-image: linear-gradient(to right, rgb(255, 255, 238) , goldenrod);
     color:rgb(66, 0, 0);
     width: 88%;
+    min-width: 400px;
     margin-right: auto;
     border-style: none;
     cursor: pointer;
@@ -217,6 +220,7 @@ label > .tickmark::after {
 }
 #todoVisual progress {
     width: 40vw;
+    min-width: 380px;
     height: 2rem;
     margin-top: 0;
     position: relative;
@@ -227,6 +231,7 @@ label > .tickmark::after {
     position: fixed;
     z-index: 1;
     width: 45vw;
+    min-width: 420px;
     display: flex; 
     justify-content: center;
     border-bottom-left-radius: 50%;
@@ -262,4 +267,29 @@ label > .tickmark::after {
     -ms-transform: rotate(45deg);
     border-bottom-right-radius: 50%; /*0.25rem;*/
     border-top-right-radius: 50%;
+}
+
+#fa-spin-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+}
+
+#loadingIcon {
+    color: rgb(33, 151, 248);
+    font-size: 2rem;
+    text-align: center;
+}
+
+#loadingMessage {
+    font-size: smaller;
+    border-radius: 10px;
+    outline: none;
+    background: rgb(214, 216, 216); /* rgb(207, 223, 252); */
+    padding: 5px 10px 5px 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-top: 8px;
+    /* color: rgb(24, 21, 21); */
 }
